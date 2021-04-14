@@ -7,7 +7,8 @@ Shipping service is written in Java, Hence we need to install Java.
 1. Install Maven, This will install Java too 
 
 ```
-# yum install maven -y
+# apt update 
+# apt install maven -y 
 ```
 
 2. As per the standard process, we always run the applications as a normal user.
@@ -15,7 +16,7 @@ Shipping service is written in Java, Hence we need to install Java.
 Create a user 
 
 ```
-# useradd roboshop
+# useradd -m -s /bin/bash roboshop
 ```
 
 3. Download the repo 
