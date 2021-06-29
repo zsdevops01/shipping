@@ -1,4 +1,4 @@
-FROM        maven:3-openjdk-8 aa BUILD
+FROM        maven:3-openjdk-8 as BUILD
 RUN         mkdir -p /app/src
 WORKDIR     /app
 COPY        src src
