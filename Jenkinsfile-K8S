@@ -1,0 +1,25 @@
+pipeline {
+    agent {
+        label "DOCKER"
+    }
+
+    parameters {
+        choice(name: 'ENV', choices: ['dev', 'prod' ], description: 'Select Environment')
+        string(name: 'VERSION', defaultValue: '', description: 'Which Version of Component to deploy')
+    }
+
+    stages {
+
+
+        stage('Deploy to DEV Env') {
+            steps {
+                sh '''
+                    helm upgrade -i shipping helm/. --set image.tag=${VERSION}
+                '''
+            }
+        }
+
+
+
+    }
+}
