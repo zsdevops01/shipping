@@ -7,5 +7,5 @@ RUN         mvn package
 
 FROM        openjdk:8-jre-slim
 COPY        --from=BUILD /app/target/shipping-1.0.jar shipping.jar
-CMD         ["java", "-jar", "shipping.jar"]
+CMD         ["java", "-Xmx2048m", "-jar", "shipping.jar"]
 
